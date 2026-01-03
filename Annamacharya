@@ -1,0 +1,87 @@
+import java.util.Scanner;
+interface AIDS1
+{
+void displayAIDS1Details(String[] RollNo,int[] marks);
+}
+interface AIDS2
+{
+void displayAIDS2Details(String[] RollNo,int[] marks);
+}
+interface AIDS3
+{
+void displayAIDS3Details(String[] RollNo,int[] marks);
+}
+class HOD implements AIDS1,AIDS2,AIDS3{
+public void displayAIDS1Details(String[] RollNo,int[] marks){
+System.out.println("AIDS1 Details:");
+int i;
+for(i=0;i<RollNo.length;i++)
+{
+System.out.println("RollNo:"+RollNo[i]+"\t"+"Marks:"+marks[i]);
+}
+}
+public void displayAIDS2Details(String[] RollNo,int[] marks)
+{
+System.out.println("AIDS2 Details:");
+int i;
+for(i=0;i<RollNo.length;i++){
+System.out.println("RollNo:"+RollNo[i]+"\t"+"Marks:"+marks[i]);
+}
+}
+public void displayAIDS3Details(String[] RollNo,int[] marks)
+{
+System.out.println("AIDS3 Details:");
+int i;
+for(i=0;i<RollNo.length;i++)
+{
+System.out.println("RollNo:"+RollNo[i]+"\t"+"Marks:"+marks[i]);
+}
+}
+}
+class MultipleInheritance{
+public static void main(String[] args){
+Scanner sc=new Scanner(System.in);
+System.out.println("Enter the AIDS1 Roll Numbers");
+int n=sc.nextInt();
+String[] rollno=new String[n];
+int i;
+for(i=0;i<rollno.length;i++){
+rollno[i]=sc.next();
+}
+System.out.println("Enter the AIDS1 Marks:");
+int[] marks=new int[n];
+for(i=0;i<marks.length;i++)
+{
+marks[i]=sc.nextInt();
+}
+System.out.println("Enter the AIDS2 RollNo:");
+int s=sc.nextInt();
+String[] r=new String[s];
+for(i=0;i<r.length;i++){
+r[i]=sc.next();
+}
+System.out.println("Enter the AIDS2 Marks");
+int[] m=new int[s];
+for(i=0;i<m.length;i++){
+m[i]=sc.nextInt();
+}
+System.out.println("Enter the AIDS3 Roll Number:");
+int N=sc.nextInt();
+String[] RollNo=new String[N];
+for(i=0;i<RollNo.length;i++){
+RollNo[i]=sc.next();
+}
+System.out.println("Enter the AIDS3 Marks");
+int[] Marks=new int[N];
+for(i=0;i<Marks.length;i++){
+Marks[i]=sc.nextInt();
+}
+AIDS1 s1=new HOD();//Upcasting
+AIDS2 s2=new HOD();//Upcasting
+AIDS3 s3=new HOD();//Upcasting
+s1.displayAIDS1Details(rollno,marks);
+s2.displayAIDS2Details(r,m);
+s3.displayAIDS3Details(RollNo,Marks);
+sc.close();
+}
+}
